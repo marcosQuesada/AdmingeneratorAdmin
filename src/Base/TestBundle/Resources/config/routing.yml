@@ -1,0 +1,8 @@
+BaseTestBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: BaseTestBundle:Default:index }
+
+BaseTestBundle_admin:
+    resource: "@BaseTestBundle/Controller/Admin/"
+    type:     admingenerator
+    prefix:   /admin/

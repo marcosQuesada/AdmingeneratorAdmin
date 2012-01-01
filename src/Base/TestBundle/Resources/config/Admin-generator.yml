@@ -1,0 +1,36 @@
+generator: admingenerator.generator.doctrine
+params:
+  model: Base\TestBundle\Entity\Location
+  namespace_prefix: Base
+  bundle_name: TestBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: List for TestBundle
+      display: ~
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: ~
+  filters:
+    params:
+      display: ~
+  new:
+    params:
+      title: New object for TestBundle
+      display:
+        "NONE": [ title, address , zip ,city , localization ]
+        "Other informations": [country]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: You're editing the object "{{ Location.title }}"
+      display:
+        "NONE": [ title, address , zip ,city ,country , localization ]
+      actions:
+        list: ~
+  delete: ~
